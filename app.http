@@ -1,0 +1,60 @@
+###
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "username" : "karthikpenugonda", 
+  "name": "karthik", 
+  "password" : "karthik@123"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username" : "karthikpenugonda", 
+  "password" : "karthik@123"
+}
+
+POST http://localhost:3000/transactions 
+Content-Type: application/json
+
+{
+  "type": "Income",
+  "category": "Salary",
+  "amount": 5000,
+  "date": "2024-10-24",
+  "description": "Monthly salary"
+}
+
+###
+
+GET http://localhost:3000/transactions
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthcnRoaWtwZW51Z29uZGEiLCJpYXQiOjE3Mjk2NjgwNDF9.8n1958Lr1nbVeNDRT_ptcsgDCpiDkSWfs6S7xfvpAXw
+
+###
+
+GET http://localhost:3000/transactions/7
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthcnRoaWtwZW51Z29uZGEiLCJpYXQiOjE3Mjk2NjgwNDF9.8n1958Lr1nbVeNDRT_ptcsgDCpiDkSWfs6S7xfvpAXw
+
+
+###
+
+PUT http://localhost:3000/transactions/11
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthcnRoaWtwZW51Z29uZGEiLCJpYXQiOjE3Mjk2NjgwNDF9.8n1958Lr1nbVeNDRT_ptcsgDCpiDkSWfs6S7xfvpAXw
+Content-Type: application/json
+
+{
+  "type": "Income",
+  "category": "Salary",
+  "amount": 45000,
+  "date": "2024-10-25",
+  "description": "Monthly salary"
+}
+
+###
+
+DELETE http://localhost:3000/transactions/11
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthcnRoaWtwZW51Z29uZGEiLCJpYXQiOjE3Mjk2NjgwNDF9.8n1958Lr1nbVeNDRT_ptcsgDCpiDkSWfs6S7xfvpAXw
